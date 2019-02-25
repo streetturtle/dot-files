@@ -1,0 +1,140 @@
+* {
+  black:      #000000;
+  red:        #eb6e67;
+  green:      #95ee8f;
+  yellow:     #f8c456;
+  blue:       #6eaafb;
+  mangenta:   #d886f3;
+  cyan:       #6cdcf7;
+  emphasis:   #50536b;
+  text:       #dfdfdf;
+  text-alt:   #b2b2b2;
+  fg:         #abb2bf;
+
+  bg:         #263238cc;
+
+
+  cl1: #4d32302f;
+  cl2: #0032302f;
+  cl3: #d8dee9;
+  cl4: #0032302f;
+  cl5: #cc458588;
+  cl6: #32302f;
+  cl7: #4d1b2b34;
+  cl8: #4d343d46;
+  cl9: #6699cc;
+  cl10: #4d6699cc;
+  cl11: #4d1b2b34;
+  cl12: #ec5f67;
+  cl13: #4dec5f67;
+  cl14: #d8dee9;
+
+
+  /*separatorcolor:              rgba ( 79, 128, 255, 100 % );*/
+
+
+  normal-background: #32302f00;
+  normal-foreground: #d8dee9;
+
+  urgent-background: #1b2b344d;
+  urgent-foreground: #ec5f67;
+
+  active-background: #1b2b344d;
+  active-foreground: #6699cc;
+
+  selected-normal-background: #458588cc;
+  selected-normal-foreground: #32302f;
+
+  selected-urgent-background:#ec5f674d;
+  selected-urgent-foreground:#d8dee9;
+
+  selected-active-background: #6699cc4d;
+  selected-active-foreground: #d8dee9;
+
+
+
+  spacing: 0;
+  background-color: transparent;
+
+  font: "Roboto 11";
+  text-color: @text;
+}
+
+#window {
+  transparency: "/home/pmakhov/Pictures/tmnt_small.png";
+  background-color: @bg;
+  padding: 8px;
+  border-radius: 8px;
+  width: 500px;
+}
+
+#mainbox {
+  children: [inputbar, message, sidebar, listview];
+  spacing: 10px;
+  /*padding: 20px;*/
+}
+
+#inputbar {
+  /*text-color: #ffffff;*/
+  padding:    1px;
+  children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+#listview {
+  fixed-height: 0;
+  border: 0;
+  spacing: 2px;
+  /*scrollbar: true;*/
+  padding: 4px;
+}
+#message {
+  border: 1px;
+  border-color: #ff0000;
+  padding: 10px ;
+}
+
+
+
+#textbox-prompt-colon {
+  expand:     false;
+  str:        ":";
+  margin:     0px 0.3em 0em 0em ;
+  text-color: @normal-foreground;
+}
+
+#element.normal.normal {
+  background-color: @normal-background;
+  text-color:       @normal-foreground;
+}
+#element.normal.urgent {
+  background-color: @urgent-background;
+  text-color:       @urgent-foreground;
+}
+#element.normal.active {
+  background-color: @active-background;
+  text-color:       @active-foreground;
+}
+#element.selected.normal {
+  background-color: @selected-normal-background;
+  text-color:       @selected-normal-foreground;
+}
+#element.selected.urgent {
+  background-color: @selected-urgent-background;
+  text-color:       @selected-urgent-foreground;
+}
+#element.selected.active {
+  background-color: @selected-active-background;
+  text-color:       @selected-active-foreground;
+}
+#element.alternate.normal {
+  background-color: @alternate-normal-background;
+  text-color:       @alternate-normal-foreground;
+}
+#element.alternate.urgent {
+  background-color: @alternate-urgent-background;
+  text-color:       @alternate-urgent-foreground;
+}
+#element.alternate.active {
+  background-color: @alternate-active-background;
+  text-color:       @alternate-active-foreground;
+}
